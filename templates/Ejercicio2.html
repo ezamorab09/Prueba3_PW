@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Formulario de Personas</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilosEjercico2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Personas</h1>
+        <form action="/Ejercicio2" method="POST">
+            <label for="nombre1">Nombre 1:</label>
+            <input type="text" id="nombre1" name="nombre1" value="" required><br>
+
+            <label for="nombre2">Nombre 2:</label>
+            <input type="text" id="nombre2" name="nombre2" value="" required><br>
+
+            <label for="nombre3">Nombre 3:</label>
+            <input type="text" id="nombre3" name="nombre3" value="" required>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+        {% if mensaje_error %}
+            <p> {{ mensaje_error }} </p>
+        {% else %}
+            <p> El nombre con mayor numero de caracteres es: {{ nombre_mas_largo }}</p>
+            <p> El nombre tiene: {{ longitud_nombre_mas_largo }} caracteres</p>
+        {% endif %}
+    </div>
+</body>
+</html>
